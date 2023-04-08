@@ -15,26 +15,25 @@ class App extends React.Component {
     filter: ''
 };
 
-// componentDidMount() {
-//   console.log("App componentDidMount");
-//   const contacts = localStorage.getItem("contacts");
-//   const parsedContacts = JSON.parse(contacts);
+componentDidMount() {
+  console.log("App componentDidMount");
+  const contacts = localStorage.getItem("contacts");
+  const parsedContacts = JSON.parse(contacts);
 
-//   if (parsedContacts) {
-//     this.setState({contacts: parsedContacts})
-//   }
-// };
+  if (parsedContacts) {
+  this.setState({contacts: parsedContacts})
+  }
+};
 
-// componentDidUpdate(prevProps, prevState) {
-//   console.log("App componentDidUpdate")
+componentDidUpdate(prevProps, prevState) {
 
-//   if(this.state.contacts !== prevState.contacts) {
+  if(this.state.contacts !== prevState.contacts) {
     
-//     localStorage.setItem("contacts", JSON.stringify(this.state.contacts)); 
+    localStorage.setItem("contacts", JSON.stringify(this.state.contacts)); 
     
-    
-// }
-// }
+}
+}
+
 handleAddContact = newContact => {
   if (this.state.contacts.find(contact => contact.name === newContact.name)) {
     alert(`${newContact.name} is already in your contacts.`);
@@ -83,9 +82,7 @@ render () {
         />
     </>
     )  
-
-}
-  
+} 
 };
 export default App;
 
